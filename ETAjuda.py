@@ -11,7 +11,7 @@ from langchain.prompts import ChatPromptTemplate
 from Loaders import *
 
 
-#OPENAI API_KEY =  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
+API_KEY_DEFAULT =  "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"
 TIPOS_ARQUIVOS_VALIDOS = ['Site','csv', 'txt', 'Youtube', 'PDF']
 
 CONFIG_MODELOS = {'OpenAI':
@@ -114,32 +114,31 @@ def pagina_chat():
 
 def sidebar():
     tabs = st.tabs(['Upload de Arquivos', 'Seleção de Modelos'])
+    
     with tabs[0]:
         tipo_arquivo = st.selectbox('Selecionar Arquivo', TIPOS_ARQUIVOS_VALIDOS)
         if tipo_arquivo == 'Site':
             arquivo = st.text_input('Digite o endereço do site')
-        if tipo_arquivo == 'Youtube':
+        elif tipo_arquivo == 'Youtube':
             arquivo = st.text_input('Digite o endereço do Video')
-        if tipo_arquivo == 'PDF':
+        elif tipo_arquivo == 'PDF':
             arquivo = st.file_uploader('Faça o upload do PDF', type=['pdf'])
-        if tipo_arquivo == 'csv':
+        elif tipo_arquivo == 'csv':
             arquivo = st.file_uploader('Faça o upload do CSV', type=['csv'])
-        if tipo_arquivo == 'json':
-            arquivo = st.file_uploader('Faça o upload do Json', type=['json'])
-        if tipo_arquivo == 'txt':
-            arquivo = st.file_uploader('Faça o upload do txt', type=['Txt'])
+        elif tipo_arquivo == 'txt':
+            arquivo = st.file_uploader('Faça o upload do txt', type=['txt'])
+    
     with tabs[1]:
         provedor = st.selectbox('Selecione o provedor', CONFIG_MODELOS.keys())
         modelo = st.selectbox('Selecione o modelo', CONFIG_MODELOS[provedor]['modelos'])
-        api_key = st.text_input(
-            f'Adicione a API key para o provedor {provedor}',
-            value=st.session_state.get(f'api_key_{provedor}'))
         
+        # Define a chave da API diretamente no session_state
+        st.session_state[f'api_key_{provedor}'] = API_KEY_DEFAULT
 
-        st.session_state[f'api_key_{provedor}'] = api_key
+   
 
     if st.button('Pedir Ajuda ao ET te ajuda', use_container_width=True):
-        carrega_modelo(provedor, modelo, api_key, tipo_arquivo, arquivo)
+        carrega_modelo(provedor, modelo, API_KEY_DEFAULT, tipo_arquivo, arquivo)
     if st.button('Apagar Histórico', use_container_width=True):
         st.session_state['memoria'] = MEMORIA
 

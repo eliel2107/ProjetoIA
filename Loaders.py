@@ -2,7 +2,6 @@ from langchain_community.document_loaders import (WebBaseLoader,
                                                   YoutubeLoader,
                                                   CSVLoader,
                                                   TextLoader,
-                                                  JSONLoader,
                                                   PyPDFLoader)
 
 url = 'https://asimov.academy/'
