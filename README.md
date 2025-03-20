@@ -106,3 +106,43 @@ Video final.
 
 
 Este trecho de código define a função main() que utiliza o gerenciador de contexto st.sidebar para chamar duas funções: sidebar() e pagina_chat(). Abaixo da definição da função, há uma declaração if que verifica se o script está sendo executado como o módulo principal, e, se for o caso, chama a função main().
+
+
+
+
+
+## Funções do ETAjuda
+
+### Como usar para ler um site 
+
+
+Video site
+
+
+Vc irá selecionar um link do Site que dejesa analisar, logo após é só fazer perguntas sobre o site que o ETAjuda irá te fornecer.
+
+### Como usar para ler um CSV
+
+Video CSV
+
+
+
+Aqui vc irá selecionar um arquivo CSV, logo após é só fazer as perguntas das informações que gostaria extrair do documento. No exemplo acima foi usado um CSV de controle de chamados IT.
+
+
+### Como usar para ler um Txt
+
+
+Video Txt
+
+
+Mesmo processo que o CSV, irá selecionar um arquivo Txt e ele te informará as informações nele contido, de acordo com oque for pedido. No video acima ele fornece um trancrisação de uma resolução de  um chamado IT. 
+
+
+### Como usar para ler um PDF
+
+
+Video PDF
+
+
+O processo é o mesmo, selecionar o PDF e extrair informações de acordo com a sua necessidade.
