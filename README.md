@@ -1,6 +1,10 @@
 ## Projeto de Interface Interativa com Streamlit e LangChain 
 
-Descrição
+Descrição:
+
+
+Este projeto foi desenvolvido para criar uma aplicação interativa utilizando várias bibliotecas e módulos em Python. O objetivo principal é fornecer uma interface de usuário intuitiva e funcional que permita a interação com diferentes tipos de arquivos e modelos de linguagem.
+
 
   <img src="arquivos/img/Imagem1.png" style="width:600px; height:auto;">
 
